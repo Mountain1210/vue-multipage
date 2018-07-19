@@ -5,8 +5,8 @@
 </template>
 
 <script>
-  window.$ = window.jQuery = require('materialize-css/node_modules/jquery/dist/jquery.js')
-  require('materialize-css')
+  // window.$ = window.jQuery = require('materialize-css/node_modules/jquery/dist/jquery.js')
+  // require('materialize-css')
 export default {
   name: 'app',
   //  页面加载之前
@@ -19,5 +19,5 @@ export default {
 </script>
 
 <style>
-  @import "../../../node_modules/materialize-css/bin/materialize.css";
+  /* @import "../../../node_modules/materialize-css/bin/materialize.css"; */
 </style>

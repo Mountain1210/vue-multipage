@@ -1,178 +1,133 @@
 <template>
-  <div id="app">
-    <header>
-      <!--侧边栏-->
-      <ul id="slide-out" class="side-nav fixed">
-        <!--侧边栏头部-->
-        <li><div class="userView">
-          <div class="background">
-            <img src="./assets/img/side-nev_bg.jpg">
-          </div>
-          <a href="javascript:void(0)"><img class="circle" src="./assets/img/side-nev_head.jpg"></a>
-          <a href="javascript:void(0)"><span class="white-text name">QY-Store</span></a>
-          <a href="javascript:void(0)"><span class="white-text email">商品信息及数据分析</span></a>
-        </div></li>
 
-        <!--分级列表-->
-        <li><ul class="collapsible" id="menu-list">
-
-          <!--商品分析-->
-          <li>
-            <a href="javascript:void(0)" class="collapsible-header waves-effect waves-teal"><i class="material-icons">shop</i>商品分析</a>
-            <div class="collapsible-body">
-              <ul>
-                <li><a href="#/commodity@commodity_info" class="waves-effect waves-teal menu-item">商品信息</a></li>
-                <li><a href="#/commodity@commodity_time" class="waves-effect waves-teal menu-item">商品入库时间段</a></li>
-                <li><a href="#/commodity@commodity_type" class="waves-effect waves-teal menu-item">商品类型统计</a></li>
-              </ul>
-            </div>
-          </li>
-
-          <!--销售分析-->
-          <li>
-            <a href="javascript:void(0)" class="collapsible-header waves-effect waves-teal"><i class="material-icons">assignment</i>销售分析</a>
-            <div class="collapsible-body">
-              <ul>
-                <li><a href="#/sale@sale_info" class="waves-effect waves-teal menu-item">销售信息</a></li>
-                <li><a href="#/sale@sale_time" class="waves-effect waves-teal menu-item">销售时间段</a></li>
-                <li><a href="#/sale@sale_type" class="waves-effect waves-teal menu-item">分类商品销售统计</a></li>
-              </ul>
-            </div>
-          </li>
-
-          <!--环境分析-->
-          <li>
-            <a href="javascript:void(0)" class="collapsible-header waves-effect waves-teal"><i class="material-icons">visibility</i>环境分析</a>
-            <div class="collapsible-body">
-              <ul>
-                <li><a href="#/environment@area_info" class="waves-effect waves-teal menu-item">区域信息</a></li>
-                <li><a href="#/environment@area_sale_time" class="waves-effect waves-teal menu-item">区域时间段销售份额</a></li>
-                <li><a href="#/environment@area_trends" class="waves-effect waves-teal menu-item">区域活跃度</a></li>
-              </ul>
-            </div>
-          </li>
-
-          <!--用户分析-->
-          <li>
-            <a href="javascript:void(0)" class="collapsible-header waves-effect waves-teal"><i class="material-icons">account_box</i>用户分析</a>
-            <div class="collapsible-body">
-              <ul>
-                <li><a href="#/user@user_info" class="waves-effect waves-teal menu-item">用户信息</a></li>
-                <li><a href="#/user@user_spending" class="waves-effect waves-teal menu-item">用户消费</a></li>
-                <li><a href="#/user@user_stay" class="waves-effect waves-teal menu-item">用户留存率</a></li>
-                <li><a href="#/user@user_trends" class="waves-effect waves-teal menu-item">用户活跃度</a></li>
-                <li><a href="#/user@user_usetime" class="waves-effect waves-teal menu-item">用户使用时间段</a></li>
-              </ul>
-            </div>
-          </li>
-
-          <!--管理-->
-          <li>
-            <a href="javascript:void(0)" class="collapsible-header waves-effect waves-teal"><i class="material-icons">settings</i>管理</a>
-            <div class="collapsible-body">
-              <ul>
-                <li><a href="#/management@management_commodity" class="waves-effect waves-teal menu-item">商品管理</a></li>
-                <li><a href="#/management@management_staff" class="waves-effect waves-teal menu-item">员工管理</a></li>
-                <li><a href="#/management@management_area" class="waves-effect waves-teal menu-item">区域管理</a></li>
-              </ul>
-            </div>
-          </li>
-
-          <!--关于-->
-          <li>
-            <a href="#/about" class="collapsible-header waves-effect waves-teal menu-item"><i class="material-icons">info</i>关于</a>
-          </li>
-        </ul></li>
-
-
+    <el-container >
+    <el-header style="height:auto" id="head">
+      <el-row>
+        <el-col :span="4"><div class="logo" style="float:left; padding:24px 16px; font-size:16px; color:#fff;">
+          太平洋保险
+        </div></el-col>
+        <el-col :span="14"><div class="grid-content bg-purple-light"></div><ul class="topmenu">
+        <li><span class="iconfont icon-category"></span>系统配置</li>
+        <li><span class="iconfont icon-form"></span>信息统计</li>
+        <li><span class="iconfont icon-text"></span>短信管理</li>
+        <li><span class="iconfont icon-lights"></span>激活管理</li>
+        <li><span class="iconfont icon-rfq"></span>UMP管理</li>
+        <li><span class="iconfont icon-set"></span>系统管理</li>
+      </ul></el-col>
+        <el-col :span="6">  <ul class="topmentu-right">
+            <li><span class="iconfont icon-electronics"></span>首页</li>
+            <li><span class="iconfont icon-account"></span>系统管理员</li>
+          </ul></el-col>
+      </el-row>
+    </el-header>
+    <el-header style="height:auto; overflow:hidden" id="menuContent">
+      <div class="submenucontent" style="overflow:hidden">
+      <ul class="submenu">
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
+        <li>参数配置<span class="iconfont icon-close"></span></li>
       </ul>
-      <!--顶部栏-->
-      <nav class="extended-nav indigo z-depth-2">
-        <div class="nav-wrapper">
-          <!--菜单按钮-->
-          <a href="#" data-activates="slide-out" class="button-collapse waves-effect"><i class="material-icons">menu</i></a>
-          <a href="#" class="brand-logo hide-on-small-and-down"><p class="nav-name">商品信息</p></a>
-          <!--右侧导航-->
-          <ul class="right">
-            <li><a href="#" class="waves-effect"><i class="material-icons left">contacts</i><span class="hide-on-med-and-down">联系</span></a></li>
-            <li><a href="#" class="waves-effect"><i class="material-icons left">more</i><span class="hide-on-med-and-down">更多</span></a></li>
-            <li><a href="#" class="waves-effect"><i class="material-icons left">info</i><span class="hide-on-med-and-down">信息</span></a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <router-view></router-view>
-    </main>
-  </div>
+    </div>
+    </el-header>
+    <el-container id="mainContent">
+        <el-aside>
+            <div class="subsmain" @click="clickOdd"> 现在的数字为：{{count}}</div>
+        </el-aside>
+        <el-main><router-view></router-view></el-main>
+    </el-container>
+  </el-container>
+
 </template>
 
 <script>
-  window.$ = window.jQuery = require('materialize-css/node_modules/jquery/dist/jquery.js')
-  require('materialize-css')
+  window.$ = window.jQuery = require('materialize-css/node_modules/jquery/dist/jquery.js');
+  import {mapGetters,mapActions} from "vuex"
 export default {
   name: 'app',
   //  页面加载之前
   created() {
   },
+  computed:mapGetters(['count'])
+  ,methods:mapActions(["clickOdd"])
   //  页面加载后
-  mounted() {
+  ,mounted() {
+    // alert($('.submenu').width());
+    // alert($(window).width())
+    // alert($('#head').height());
+    // alert($('#menuContent').height());
+    $('#mainContent').height($(window).height()-$('#menuContent').height()-$('#head').height())
     //注册菜单和侧边栏分级事件
-    $(".button-collapse").sideNav();
-    $('.collapsible').collapsible();
-
-    //菜单列表点击隐藏
-    $('.menu-item').click(function () {
-      $('#menu-list').sideNav('hide');
-    })
+    // $(".button-collapse").sideNav();
+    // $('.collapsible').collapsible();
+    //
+    // //菜单列表点击隐藏
+    // $('.menu-item').click(function () {
+    //   $('#menu-list').sideNav('hide');
+    // })
   }
 }
 </script>
 
 <style>
-  @import "../../../node_modules/materialize-css/bin/materialize.css";
-  #app {
-  }
 
-  /*侧边栏头部背景*/
-  .side-nav .userView .background img {
-    width: 100%;
-  }
 
-  /*导航名字*/
-  .nav-name {
-    margin: 0 15px;
-    padding:0;
-    font-size: 16px;
-  }
+.topmenu li,.topmentu-right li{display: inline-block; padding:24px 16px; font-size: 16px; background-color: rgb(77, 179, 252); color: #fff;}
+.topmenu li span,.topmentu-right span{padding:0 4px 0 0}
+.submenu li{display: inline-block;}
+.el-header, .el-footer {
+   background-color: #B3C0D1;
+   color: #333;
+   text-align: center;
+   line-height: 60px;
+ }
+ .topmentu-right{padding-left: 12%}
+.el-header{background-color: #44b1ff}
+.el-header:nth-child(2){background-color: #e4e4e4; text-align: left; padding:0px;line-height: 100%; border-bottom:1px solid #ccc}
+.el-header:nth-child(2) li{padding:12px 16px; border-right:1px solid #ccc; font-size: 14px}
+.el-header:nth-child(2) li span{cursor: pointer; margin-left:12px; }
+  .el-header:nth-child(2) li .icon-close:before{margin-top:2px}
+ .el-aside {
+   background-color: #D3DCE6;
+   color: #333;
+   text-align: center;
+   line-height: 200px;
+ }
 
-  /*右侧导航栏图标*/
-  .nav-wrapper .right li a i{
-    padding: 0;
-    margin: 0;
-    font-size: 16px;
-  }
-  /*右侧导航栏文字*/
-  .nav-wrapper .right li a span{
-    margin-left: 8px;
-  }
+ .el-main {
+   background-color: #E9EEF3;
+   color: #333;
+   text-align: center;
+   line-height: 160px;
+ }
 
-  /*为大屏幕的侧边栏提供空间*/
-  header, main, footer {
-    padding-left: 300px;
-  }
+ body > .el-container {
+   margin-bottom: 40px;
+ }
 
-  /*主干区域*/
-  main {
-    position: fixed;
-    width: 100%;
-    height: calc(100% - 64px);
-    z-index: -1;
-  }
+ .el-container:nth-child(5) .el-aside,
+ .el-container:nth-child(6) .el-aside {
+   line-height: 260px;
+ }
 
-  @media only screen and (max-width : 992px) {
-    header, main, footer {
-      padding-left: 0;
-    }
-  }
+ .el-container:nth-child(7) .el-aside {
+   line-height: 320px;
+ }
+ .submenu{position: relative; white-space:nowrap; display: block;}
 </style>

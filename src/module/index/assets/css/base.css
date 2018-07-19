@@ -1,0 +1,344 @@
+@charset 'utf-8';
+
+/*
+@����: base
+@����: ���������Ĭ����ʽ
+*/
+
+/* ��ֹ�û��Զ��屳����ɫ����ҳ��Ӱ�죬������û������Զ������� */
+html
+{
+    color: black;
+    background: white;
+}
+body{overflow:hidden}
+#subrightContent{overflow-y:scroll;}
+*{font-family: "΢���ź�"}
+/* ����߾�ͨ���ø����������ʽ�ı���λ�ò�ͬ */
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Ҫע���Ԫ�ز����̳и��� font ������ */
+
+body,
+button,
+input,
+select,
+textarea
+{
+    font: 12px SimSun, tahoma, arial, sans-serif;
+}
+
+input,
+select,
+textarea
+{
+    font-size: 100%;
+}
+
+
+/* ȥ���Table cell �ı߾ಢ������غ� */
+
+table
+{
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+
+/* IE bug fixed: th ���̳� text-align*/
+
+th
+{
+    text-align: inherit;
+}
+
+
+/* ȥ��Ĭ�ϱ߿� */
+
+fieldset,
+img
+{
+    border: none;
+}
+
+
+/* ie6 7 8(q) bug ��ʾΪ���ڱ��� */
+
+iframe
+{
+    display: block;
+}
+
+
+/* ȥ�� firefox �´�Ԫ�صı߿� */
+
+abbr,
+acronym
+{
+    font-variant: normal;
+
+    border: none;
+}
+
+
+/* һ�µ� del ��ʽ */
+
+del
+{
+    text-decoration: line-through;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var
+{
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+/* ȥ���б�ǰ�ı�ʶ, li ��̳� */
+
+ol,
+ul
+{
+    list-style: none;
+}
+
+
+/* �������Ű�����Ҫ������, ����ʲô������ */
+
+caption,
+th
+{
+    text-align: left;
+}
+
+
+/* ����yahoo, �ñ��ⶼ�Զ���, ��Ӧ���ϵͳӦ�� */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    font-size: 100%;
+    font-weight: 500;
+}
+
+q:before,
+q:after
+{
+    content: '';
+}
+
+
+/* ͳһ�ϱ���±� */
+
+sub,
+sup
+{
+    font-size: 75%;
+    line-height: 0;
+
+    position: relative;
+
+    vertical-align: baseline;
+}
+
+sup
+{
+    top: -.5em;
+}
+
+sub
+{
+    bottom: -.25em;
+}
+
+
+/* �������� hover ״̬����ʾ�»��� */
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+
+/* Ĭ�ϲ���ʾ�»��ߣ�����ҳ���� */
+
+ins,
+a
+{
+    text-decoration: none;
+}
+
+
+/* IE6,7�����״��ȥ�� */
+
+a:focus,
+*:focus
+{
+    outline: none;
+}
+
+
+/* ������� */
+
+.clearfix:before,
+.clearfix:after
+{
+    display: table;
+
+    content: '';
+}
+
+.clearfix:after
+{
+    clear: both;
+    overflow: hidden;
+}
+
+.clearfix
+{
+    zoom: 1;
+    /* for IE6 IE7 */
+}
+
+.clear
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+    clear: both;
+    overflow: hidden;
+
+    height: 0;
+}
+
+
+/* ������ʾ������, ͨ�������� JS ��� */
+
+.hide
+{
+    display: none !important;
+    visibility: hidden;
+}
+
+.block
+{
+    display: block !important;
+}
+
+
+/* ��������, ���ٸ���������bug */
+
+.fl
+{
+    display: inline;
+    float: left;
+}
+
+.fr
+{
+    display: inline;
+    float: right;
+}
+
+#app
+{
+    min-width: 1024px;
+}
+
+#leftContent
+{
+    font-size: 14px;
+
+    width: 160px;
+    padding: 25px 0;
+
+    color: #fff;
+    background-color: #24344e;
+}
+
+#leftContent li
+{
+    padding: 12px 8px;
+}
+
+#leftContent li span:before
+{
+    margin-right: 8px;
+}
+
+
+/*ҳ��*/
+
+.main{margin-left:160px; margin-top:0px;}
+.main .mainlist #subleftContent{ background-color:#fff; float:left;}
+.main .mainlist {overflow:hidden;background-color:#fff}
+.main .mainlist #subrightContent{
+    float: right;
+    border-left:1px solid #ccc;
+    background-color:#fff;
+    vertical-align: top;
+    width: 420px!important;
+}
+.func .el-input-group__append{background-color: rgba(79, 159, 222, 1); border-radius: 0 4px 4px 0; border:1px solid #23A3DBFF; border-left: none}
+.showmap{float:left; padding:6px 8px; margin-left:16px; background-color:rgba(79, 159, 222, 1); color:#fff;border-radius: 5px; margin-top: 3px; }
+.showmap .maptxt{font-size:12px; padding-left:8px; font-weight:normal;float:right; cursor: pointer;}
+.func{overflow:hidden; border-bottom:1px solid #f0f0f0; background-color:#fff; padding:4px 10px; margin-top:2px}
+.marqueecla{display:inline;float:left; padding-top:2px; margin-left:16px; padding-top:8px;}
+.main .mainlist{width:100%}
+.scrollContent{/*min-height:800px; height:900px; */overflow:scroll; overflow-y:auto;overflow-y: auto;overflow-x: hidden; }
