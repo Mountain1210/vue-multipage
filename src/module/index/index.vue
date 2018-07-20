@@ -21,7 +21,9 @@
       </el-row>
     </el-header>
     <el-header style="height:auto; overflow:hidden" id="menuContent">
-      <div class="submenucontent" style="overflow:hidden">
+      <div class="submenucontent" style="overflow:hidden; position:relative;">
+        <div></div>
+
       <ul class="submenu">
         <li>参数配置<span class="iconfont icon-close"></span></li>
         <li>参数配置<span class="iconfont icon-close"></span></li>

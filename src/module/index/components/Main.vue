@@ -2,11 +2,15 @@
   <el-container id="mainContent">
       <el-aside>
           <!-- <div class="subsmain" @click="clickOdd"> 现在的数字为：{{count}}</div> -->
-          <ul>
+          <ul class="leftmenu">
             <!-- <li v-for="item in this.urlname">{{item.name}}</li> -->
-            <router-link to="dddd" tag="li" active-class="active" v-for="item in this.urlname" >
-                {{item.name}}
-        </router-link>
+            <router-link :to="item.subMenuu[0].url" tag="li" active-class="active" v-for="item in this.urlname" >
+                <div class="indexurl">{{item.name}}</div>
+                <div class="subconetet">
+                  <router-link :to="itemsub.url" tag="p" active-class="active" v-for="itemsub in item.subMenuu" >{{itemsub.name}}
+                </router-link>
+                </div>
+            </router-link>
           </ul>
       </el-aside>
       <el-main><iframe v-bind:src="getPagePath" width="100%" height="100%" frameborder="0" id="external-frame"></iframe></el-main>
@@ -22,15 +26,18 @@ import {mapGetters,mapActions} from "vuex"
     name: 'Main'
     ,data () {
       return {
-        urlname:null,
+        urlname:[],
         //缓存页面路径
-        page_path: 'about.html',
+        page_path: 'about/index/index.html',
         //页面容器,用于存放需要跳转页面的路径
         page_list: {
           //index
           'index': 'index.html',
           //about
-          'about': 'about.html',
+          'about@index': 'about/index.html',
+          'about@aaa': 'about/aaa.html',
+          'about@bbb': 'about/bbb.html',
+
           //commodity
           'commodity@commodity_info': 'commodity/commodity_info.html',
           'commodity@commodity_time': 'commodity/commodity_time.html',
@@ -58,17 +65,13 @@ import {mapGetters,mapActions} from "vuex"
         }
       }
     }
-    ,beforeCreate(){
-      var self=this;
-        $.get("./static/url.html").then(function(data){self.urlname=jQuery.parseJSON(data); console.log(self.urlname)});
-
-      // $.get("./static/url.html", function(data){
-      //   alert("Data Loaded: " + data);
-      // });
-
-    }
-    ,beforeMount(){
-
+    ,created(){
+        var _self=this;
+        $.get("./static/url.html").then((datas)=>{
+          for(var x of jQuery.parseJSON(datas)){
+            _self.urlname.push(x)
+            }
+        });
     }
     ,mounted(){
 
@@ -86,28 +89,29 @@ import {mapGetters,mapActions} from "vuex"
             return this.page_path
           }
           else {
-            this.page_path = this.page_list['about']
+            this.page_path = this.page_list['about@index']
           }
           return this.page_path
         }
     }
     ,mounted() {
       $('#mainContent').height($(window).height()-$('#menuContent').height()-$('#head').height());
-      console.log(this.urlname)
-      // var self=this;
-      // $.ajax({
-      //  type: "get",
-      //  url: "./static/url.html",
-      //  success: function(msg){
-      //
-      //    self.urlname=jQuery.parseJSON(msg);
-      //    console.log(self.urlname);
-      //    // console.log(JSON.parse(msg))
-      //  }
-      // });
-      //
-      //
-      // console.log(this.urlname)
+      $(".leftmenu").delegate(".indexurl", "click", function(){
+          $(this).parent('li').siblings().children('.subconetet').hide();
+          $(this).siblings('.subconetet').show();
+      });
+    }
+    ,beforeUpdate(){
+      // console.log($('.indexurl').size());
+    }
+    ,updated(){
+      let subname=this.$route.params.page_path.split('@')[0];
+      $('.indexurl').each(function(){
+        if($(this).html()==subname){
+          $(this).parent('li').siblings().children('.subconetet').hide();
+          $(this).siblings('.subconetet').show();
+        }
+      })
     }
   }
 </script>
@@ -117,4 +121,8 @@ import {mapGetters,mapActions} from "vuex"
   iframe {
     padding: 3px;
   }
+  .el-aside .leftmenu li{padding:0px; margin:0px 0px 8px; line-height: 100%; font-size: 16px; text-align: center; }
+  .el-aside .leftmenu li .indexurl{background-color: rgb(67, 0, 120); color: #fff; padding:12px 0; cursor: pointer;}
+    .el-aside .leftmenu li .subconetet{display: none;}
+  .el-aside .leftmenu li .subconetet p{padding:0px; margin:0px; line-height:100%; font-size:14px; text-align: center; padding:8px 0px;cursor: pointer; border-bottom:1px solid #111}
 </style>
