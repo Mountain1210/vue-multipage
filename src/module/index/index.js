@@ -6,7 +6,6 @@ import App from './index.vue'
 import router from './router/index_router'
 import 'element-ui/lib/theme-chalk/index.css';
 import ElementUI from 'element-ui';
-console.log(stores);
 Vue.use(ElementUI);
 require('./assets/css/base.css');
 require('./assets/css/icon.css');

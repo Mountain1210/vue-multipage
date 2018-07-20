@@ -33,7 +33,52 @@ const state = {
     footerShow: true,
     count: 3,
     submenu: null,
-    diffData: []
+    diffData: [],
+    page_path: 'about.html',
+    //页面容器,用于存放需要跳转页面的路径
+    page_list: {
+      //index
+      'index': 'index.html',
+      //about
+      'about': 'about.html',
+      //commodity
+      'commodity@commodity_info': 'commodity/commodity_info.html',
+      'commodity@commodity_time': 'commodity/commodity_time.html',
+      'commodity@commodity_type': 'commodity/commodity_type.html',
+      //sale
+      'sale@sale_info': 'sale/sale_info.html',
+      'sale@sale_time': 'sale/sale_time.html',
+      'sale@sale_type': 'sale/sale_type.html',
+      //environment
+      'environment@area_info': 'environment/area_info.html',
+      'environment@area_sale_time': 'environment/area_sale_time.html',
+      'environment@area_trends': 'environment/area_trends.html',
+      //user
+      'user@user_info': 'user/user_info.html',
+      'user@user_spending': 'user/user_spending.html',
+      'user@user_stay': 'user/user_stay.html',
+      'user@user_trends': 'user/user_trends.html',
+      'user@user_usetime': 'user/user_usetime.html',
+      //management
+      'management@management_area': 'management/management_area.html',
+      'management@management_commodity': 'management/management_commodity.html',
+      'management@management_staff': 'management/management_staff.html',
+      //baidu
+      'baidu': 'http://www.baidu.com'
+    },
+    getPagePath (){
+      console.log(this.page_list);
+      if (this.page_list[this.$route.params.page_path]) {
+        this.page_path = this.page_list[this.$route.params.page_path]
+      }
+      else if(this.$route.params.page_path == '!') {
+        return this.page_path
+      }
+      else {
+        this.page_path = this.page_list['about']
+      }
+      return this.page_path
+    }
 }
 
 const mutations = {

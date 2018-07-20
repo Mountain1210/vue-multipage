@@ -46,12 +46,13 @@
       </ul>
     </div>
     </el-header>
-    <el-container id="mainContent">
+     <router-view/>
+    <!-- <el-container id="mainContent">
         <el-aside>
             <div class="subsmain" @click="clickOdd"> 现在的数字为：{{count}}</div>
         </el-aside>
         <el-main><router-view></router-view></el-main>
-    </el-container>
+    </el-container> -->
   </el-container>
 
 </template>
@@ -63,16 +64,14 @@ export default {
   name: 'app',
   //  页面加载之前
   created() {
-  },
-  computed:mapGetters(['count'])
-  ,methods:mapActions(["clickOdd"])
+  }
   //  页面加载后
   ,mounted() {
     // alert($('.submenu').width());
     // alert($(window).width())
     // alert($('#head').height());
     // alert($('#menuContent').height());
-    $('#mainContent').height($(window).height()-$('#menuContent').height()-$('#head').height())
+    // $('#mainContent').height($(window).height()-$('#menuContent').height()-$('#head').height())
     //注册菜单和侧边栏分级事件
     // $(".button-collapse").sideNav();
     // $('.collapsible').collapsible();
