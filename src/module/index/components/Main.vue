@@ -68,9 +68,7 @@ import {mapGetters,mapActions} from "vuex"
     ,created(){
         var _self=this;
         $.get("./static/url.html").then((datas)=>{
-          for(var x of jQuery.parseJSON(datas)){
-            _self.urlname.push(x)
-            }
+          _self.urlname=[...jQuery.parseJSON(datas)];
         });
     }
     ,mounted(){
