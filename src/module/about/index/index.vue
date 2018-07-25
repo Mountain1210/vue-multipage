@@ -11,6 +11,7 @@ export default {
   name: 'app',
   //  页面加载之前
   created() {
+      // console.log(this.$router)
   },
   //  页面加载后
   mounted() {

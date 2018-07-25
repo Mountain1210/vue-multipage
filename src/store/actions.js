@@ -5,15 +5,28 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default {
-        clickOdd: ({
+        addhistory: ({
             commit,
             state
-        })=>{
-            if (state.mutations.count % 2 == 0) {
-                commit(types.INCREMENT);
-            } else {
-                console.log(state)
-                alert("这是奇数")
-            }
+        },index)=>{
+          commit(types.ADDHISTORY,index);
+            // if (state.mutations.count % 2 == 0) {
+            //     commit(types.INCREMENT);
+            // } else {
+            //     console.log(state)
+            //     alert("这是奇数")
+            // }
+        }
+        ,delhistory: ({
+            commit,
+            state
+        },index)=>{
+          commit(types.DELHISTORY,index);
+            // if (state.mutations.count % 2 == 0) {
+            //     commit(types.INCREMENT);
+            // } else {
+            //     console.log(state)
+            //     alert("这是奇数")
+            // }
         }
 }

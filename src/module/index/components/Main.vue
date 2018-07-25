@@ -1,10 +1,10 @@
 <template>
   <el-container id="mainContent">
-      <el-aside>
+      <el-aside style="width:240px">
           <!-- <div class="subsmain" @click="clickOdd"> 现在的数字为：{{count}}</div> -->
           <ul class="leftmenu">
             <!-- <li v-for="item in this.urlname">{{item.name}}</li> -->
-            <router-link :to="item.subMenuu[0].url" tag="li" active-class="active" v-for="item in this.urlname" >
+            <router-link :to="item.subMenuu[0].url" tag="li" active-class="active" v-for="item in this.urlname" @click.native="da('hot')" >
                 <div class="indexurl">{{item.name}}</div>
                 <div class="subconetet">
                   <router-link :to="itemsub.url" tag="p" active-class="active" v-for="itemsub in item.subMenuu" >{{itemsub.name}}
@@ -70,11 +70,14 @@ import {mapGetters,mapActions} from "vuex"
         $.get("./static/url.html").then((datas)=>{
           _self.urlname=[...jQuery.parseJSON(datas)];
         });
+        // console.log(this.$router)
     }
     ,mounted(){
 
     }
-    ,methods:{...mapActions(["clickOdd"])}
+    ,methods:{
+        ...mapActions(["clickOdd"])
+      }
     ,computed: {
       ...mapGetters(['count']),
         //获取页面路径
@@ -122,5 +125,5 @@ import {mapGetters,mapActions} from "vuex"
   .el-aside .leftmenu li{padding:0px; margin:0px 0px 8px; line-height: 100%; font-size: 16px; text-align: center; }
   .el-aside .leftmenu li .indexurl{background-color: rgb(67, 0, 120); color: #fff; padding:12px 0; cursor: pointer;}
     .el-aside .leftmenu li .subconetet{display: none;}
-  .el-aside .leftmenu li .subconetet p{padding:0px; margin:0px; line-height:100%; font-size:14px; text-align: center; padding:8px 0px;cursor: pointer; border-bottom:1px solid #111}
+  .el-aside .leftmenu li .subconetet p{padding:0px; margin:0px; line-height:100%; color:#fff; font-size:14px; text-align: center; padding:8px 0px;cursor: pointer; border-bottom:1px solid #111}
 </style>
