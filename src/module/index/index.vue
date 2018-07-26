@@ -59,20 +59,16 @@ export default {
   name: 'app',
   data () {
     return {
-      urlname:[],
-      arraysuburlstr:[]
+      urlname:[]
     }
   }
   ,computed: {...mapGetters(['historymenu']),
-  getMenuArray(){
-    let windowidth=$(window).width();
-    var num=Math.floor(windowidth/130);
-console.log(num)
-    if(this.historymenu.length<1) return false;
-    return this.historymenu.slice(0, num);
-    // console.log(this.arraysuburlstr)
-  }
-
+    getMenuArray(){
+      let windowidth=$(window).width();
+      var num=Math.floor(windowidth/130);
+      if(this.historymenu.length<1) return false;
+      return this.historymenu.slice(0, num);
+    }
   }
   //  页面加载之前
   ,created() {

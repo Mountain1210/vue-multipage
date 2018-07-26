@@ -11,9 +11,11 @@
                 </router-link>
                 </div>
             </router-link>
+
+
           </ul>
       </el-aside>
-      <el-main><iframe v-bind:src="getPagePath" width="100%" height="100%" frameborder="0" id="external-frame"></iframe></el-main>
+      <el-main style="background-color:#fff"><iframe v-bind:src="getPagePath" width="100%" height="100%" frameborder="0" id="external-frame"></iframe></el-main>
 
 
   </el-container>
@@ -76,7 +78,13 @@ import {mapGetters,mapActions} from "vuex"
 
     }
     ,methods:{
-        ...mapActions(["clickOdd"])
+        ...mapActions(["clickOdd"]),
+        handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
+      }
       }
     ,computed: {
       ...mapGetters(['count']),
