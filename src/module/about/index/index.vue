@@ -47,6 +47,7 @@ placeholder="选择日期">
      fixed
      prop="date"
      label="日期"
+     align="center"
      width="150">
    </el-table-column>
    <el-table-column
@@ -59,36 +60,43 @@ placeholder="选择日期">
      fixed
      prop="date"
      label="日期"
+     align="center"
      width="150">
    </el-table-column>
    <el-table-column
      fixed
      prop="date"
      label="日期"
+     align="center"
      width="150">
    </el-table-column>
    <el-table-column
      prop="name"
      label="姓名"
+     align="center"
      width="120">
    </el-table-column>
    <el-table-column
      prop="province"
      label="省份"
+     align="center"
      width="120">
    </el-table-column>
    <el-table-column
      prop="city"
      label="市区"
+     align="center"
      width="120">
    </el-table-column>
    <el-table-column
      prop="address"
      label="地址"
+     align="center"
      width="300">
    </el-table-column>
    <el-table-column
      prop="zip"
+     align="center"
      label="邮编"
      width="120">
    </el-table-column>
