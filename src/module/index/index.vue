@@ -18,7 +18,7 @@
             {{item.name}}
             <p class="topmenuxb iconfont icon-moreunfold"></p>
             <ul class="subbmenu">
-               <router-link :to="subitem.url" tag="li" active-class="active" class="limenu iconfont"   v-for="subitem in item.subMenuu" >
+               <router-link :to="subitem.url" tag="li" active-class="active" class="limenuu iconfont"   v-for="subitem in item.subMenuu" >
               <!-- <li>111</li> -->{{subitem.name}}
             </router-link>
               <!-- <li>222</li>
@@ -106,12 +106,12 @@
  .submenu{position:absolute; top:0px; left:0px; white-space:nowrap; display: block;}
  .logo{background: url('./assets/img/logo.png') left center no-repeat; text-align:left; font-size:14px; background-size:48px; line-height: 100%}
  .topmenuxb{position: absolute; top:60px; width:100%;left:0px; font-size:9px; display: none;}
-.subbmenu{background-color: rgba(0,91,172,0.6);width:100%; cursor:pointer;position: absolute; z-index:9999; left:0px; top:75px; display: none;}
+.subbmenu{background-color: rgba(0,91,172,0.9);width:100%; cursor:pointer;position: absolute; z-index:9999; left:0px; top:75px; display: none;}
 .topmenu li .subbmenu li{padding:8px 0px; width:100%}
 .limenu{position:relative; cursor: default}
  .limenu:hover{background-color: rgba(0,91,172,0.6) }
   .limenu:hover .topmenuxb{display: block}
-
+.subbmenu .limenuu:hover{background-color: rgba(255,255,255,0.1)}
 /*.limenu:hover .subbmenu{display:block} */
 </style>
 <script>
