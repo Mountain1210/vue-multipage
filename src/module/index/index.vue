@@ -13,17 +13,19 @@
         <li><span class="iconfont icon-lights"></span>激活管理</li>
         <li><span class="iconfont icon-rfq"></span>UMP管理</li>
         <li><span class="iconfont icon-set"></span>系统管理</li> -->
-        <router-link :to="item.subMenuu[0].url" tag="li" active-class="active" class="limenu iconfont" :class="item.icon" v-for="item in this.urlname" >
+        <li class="limenu iconfont" :class="item.icon" v-for="item in this.urlname" >
           <!-- <router-link :to="item.subMenuu[0].url" tag="li" active-class="active" class="limenu iconfont" :class="item.icon" v-for="item in this.urlname" > -->
             {{item.name}}
             <p class="topmenuxb iconfont icon-moreunfold"></p>
             <ul class="subbmenu">
-              <li>111</li>
-              <li>222</li>
+               <router-link :to="subitem.url" tag="li" active-class="active" class="limenu iconfont"   v-for="subitem in item.subMenuu" >
+              <!-- <li>111</li> -->{{subitem.name}}
+            </router-link>
+              <!-- <li>222</li>
               <li>333</li>
-              <li>444</li>
+              <li>444</li> -->
             </ul>
-          </router-link>
+          </li>
       </ul></el-col>
         <el-col :span="4">  <ul class="topmentu-right">
 
@@ -92,7 +94,7 @@
  body > .el-container {
    margin-bottom: 40px;
  }
-.othermenu{background-color:#eee; font-size: 16px; color:#000; position:absolute; z-index: 999;right:0px; line-height:10%; width:40px; padding:18px 0; top:-1px; text-align:center}
+.othermenu{background-color:#eee; font-size: 14px; color:#000; position:absolute; z-index: 999;right:0px; line-height:10%; width:40px; padding:18px 0; top:-1px; text-align:center}
  .el-container:nth-child(5) .el-aside,
  .el-container:nth-child(6) .el-aside {
    line-height: 260px;
@@ -104,9 +106,9 @@
  .submenu{position:absolute; top:0px; left:0px; white-space:nowrap; display: block;}
  .logo{background: url('./assets/img/logo.png') left center no-repeat; text-align:left; font-size:14px; background-size:48px; line-height: 100%}
  .topmenuxb{position: absolute; top:60px; width:100%;left:0px; font-size:9px; display: none;}
-.subbmenu{background-color: rgba(0,91,172,0.6);width:100%; position: absolute; z-index:9999; left:0px; top:75px; display: none;}
+.subbmenu{background-color: rgba(0,91,172,0.6);width:100%; cursor:pointer;position: absolute; z-index:9999; left:0px; top:75px; display: none;}
 .topmenu li .subbmenu li{padding:8px 0px; width:100%}
-.limenu{position:relative;}
+.limenu{position:relative; cursor: default}
  .limenu:hover{background-color: rgba(0,91,172,0.6) }
   .limenu:hover .topmenuxb{display: block}
 
@@ -182,8 +184,6 @@ export default {
       var _this=$(this);
       clearInterval(timer);
       if($(this).hasClass("subbmenu")){
-        // $('.subbmenu').not(_this).hide()
-
     		timer=setTimeout(function (){
     			_this.show();
     		}, 300);
