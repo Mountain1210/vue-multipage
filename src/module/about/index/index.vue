@@ -26,8 +26,10 @@ placeholder="选择日期">
           <el-row  slot="btnslot">
                    <el-col :span="4">
                      <el-button-group>
-                        <el-button type="primary">名细</el-button>
-                        <el-button type="primary">合计</el-button>
+                       <el-button class="check defaultbtn">名细</el-button>
+                       <el-button class="defaultbtn">合计</el-button>
+                        <!-- <el-button type="primary">名细</el-button>
+                        <el-button type="primary">合计</el-button> -->
                       </el-button-group>
                    </el-col>
                    <el-col :span="20">
@@ -41,18 +43,20 @@ placeholder="选择日期">
    :span-method="objectSpanMethod"
    :header-cell-style="getRowClass"
    header-align="center"
+   class="tab111"
    border
-   height="250">
+   height="auto">
    <el-table-column
      fixed
      prop="date"
      label="日期"
-     align="center"
+     align="left"
      width="150">
    </el-table-column>
    <el-table-column
      fixed
      prop="date"
+     align="center"
      label="日期"
      width="150">
    </el-table-column>
@@ -218,5 +222,11 @@ export default {
   .tit{padding-right:12px}
   .padt8{padding-top:8px}
   .mart12{margin-top:12px}
+  .tab111{border:1px solid #d7d8da}
+.tab111 table td{border-right:1px solid #d7d8da; border-bottom:1px solid #d7d8da}
+.tab111 .el-table td, .el-table th.is-leaf{ border-bottom:1px solid #d7d8da; border-right:1px solid #d7d8da;}
+button.check{background-color:#FFF; color:#005db1}
+.defaultbtn{background-color: #fbfbfb;}
+.el-radio__input.is-checked .el-radio__inner,.el-checkbox__input.is-checked .el-checkbox__inner{border-color:#005bac;background:#005bac;}
   /* .el-table--border td,.el-table td,.el-table th.is-leaf,.el-table th.is-leaf,.el-table--border th{border-right: 1px solid #ff0000;} */
 </style>
