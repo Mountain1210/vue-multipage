@@ -18,7 +18,7 @@
             {{item.name}}
             <p class="topmenuxb iconfont icon-moreunfold"></p>
             <ul class="subbmenu">
-               <router-link :to="subitem.url" tag="li" active-class="active" class="limenuu iconfont"   v-for="subitem in item.subMenuu" >
+               <router-link :to="subitem.url" tag="li" active-class="active" class="limenuu iconfont"   v-for="subitem in item.subMenuu" @click.native="addhistory">
               <!-- <li>111</li> -->{{subitem.name}}
             </router-link>
               <!-- <li>222</li>
