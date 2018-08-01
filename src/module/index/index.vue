@@ -181,9 +181,10 @@ export default {
   //  页面加载后
   ,mounted(){
     let _self=this;
-    $('.submenu').delegate('li','click',function(){
-      $(this).children().addClass('hischeck').parent().siblings().children().removeClass('hischeck');
-      _self.$router.push({path:$(this).attr('urlto')});
+    $('.submenu').delegate('.txt','click',function(){
+      // $(this).children().addClass('hischeck').parent().siblings().children().removeClass('hischeck');
+      $(this).parent().addClass('hischeck').parent().siblings().children().removeClass('hischeck')
+      _self.$router.push({path:$(this).parent().parent().attr('urlto')});
     })
     $('.submenu').delegate('.icon-close','click',function(){
       let inx=$(this).parent().index();
