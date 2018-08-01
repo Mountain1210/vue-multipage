@@ -41,9 +41,12 @@
       <ul class="submenu">
 
         <!-- <li>参数配置<span class="iconfont icon-close"></span></li> -->
-        <router-link :to="item.url" tag="li" v-for="item in getMenuArray" >
-            <span class="txt" :title="item.name">{{item.name | capitalize}}</span><span class="iconfont icon-close"></span>
-        </router-link>
+        <!-- <li  :urlto="item.url" :class="ischeck?'hischeck':'clB'" v-for="item in getMenuArray" > -->
+        <li :urlto="item.url"  v-for="(item,index) in getMenuArray">
+
+<!-- {{getMenuArray.length}} -->
+            <p :class="parseInt(getMenuArray.length)==index+1?'hischeck':'clB'"><span class="txt"  :title="item.name">{{index+1}}{{item.name | capitalize}}</span><span class="iconfont icon-close"></span></p>
+        </li>
       </ul>
     </div>
     </el-header>
@@ -64,6 +67,7 @@
 .topmentu-right li.check{ background-color:#04549d;}
 .topmenu li span,.topmentu-right span{padding:0 4px 0 0}
 .submenu li{display: inline-block;}
+.submenu .hischeck{color:#04549d}
 .el-header, .el-footer {
    background-color: #B3C0D1;
    color: #333;
@@ -126,6 +130,7 @@ export default {
   data () {
     return {
       urlname:[]
+      ,ischeck:false
     }
   }
   ,computed: {...mapGetters(['historymenu']),
@@ -160,20 +165,25 @@ export default {
     }
   ,methods:{
     addhistory(event){
-      console.log(event);
+      // console.log(event);
+      this.ischeck=true;
         const a = {};
         Object.assign(a, { "name": event.target.innerText,"url": this.$route.path});
         this.$store.dispatch("addhistory",a);
   },
   dele(){
     alert(333)
-  }
+  },
+  // historyitem(e){
+  //   alert(e)
+  // }
   }
   //  页面加载后
   ,mounted(){
     let _self=this;
-    $('.submenu').delegate('.txt','click',function(){
-      alert($(this).text())
+    $('.submenu').delegate('li','click',function(){
+      $(this).children().addClass('hischeck').parent().siblings().children().removeClass('hischeck');
+      _self.$router.push({path:$(this).attr('urlto')});
     })
     $('.submenu').delegate('.icon-close','click',function(){
       let inx=$(this).parent().index();

@@ -20,7 +20,7 @@
     }
 </script>
 <style>
-  .titxt{font-size:18px; color:#000;margin-bottom:20px; font-size: 21px; }
+  .titxt{font-size:18px; color:#000;margin-bottom:20px; font-size: 24px; }
   .titxt .el-icon-question{margin-left:12px}
   .tt{padding-right:8px}
 </style>
