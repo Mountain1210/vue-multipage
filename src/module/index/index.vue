@@ -45,7 +45,7 @@
         <li :urlto="item.url"  v-for="(item,index) in getMenuArray">
 
 <!-- {{getMenuArray.length}} -->
-            <p :class="parseInt(getMenuArray.length)==index+1?'hischeck':'clB'"><span class="txt"  :title="item.name">{{index+1}}{{item.name | capitalize}}</span><span class="iconfont icon-close"></span></p>
+            <p :class="parseInt(getMenuArray.length)==index+1?'hischeck':'clB'"><span class="txt"  :title="item.name">{{item.name | capitalize}}</span><span class="iconfont icon-close"></span></p>
         </li>
       </ul>
     </div>
