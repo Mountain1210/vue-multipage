@@ -1,7 +1,7 @@
 <template>
   <el-container id="mainContent">
-    <!-- <el-aside style="width:240px;" v-if="false"> 处理不喧染的写法 -->
-      <el-aside style="width:240px;">
+    <el-aside style="width:240px;" v-if="false">
+      <!-- <el-aside style="width:240px;"> 喧染的写法-->
           <!-- <div class="subsmain" @click="clickOdd"> 现在的数字为：{{count}}</div> -->
           <ul class="leftmenu">
             <!-- <li v-for="item in this.urlname">{{item.name}}</li> -->
@@ -16,7 +16,7 @@
 
           </ul>
       </el-aside>
-      <el-main style="background-color:#fff"><iframe v-bind:src="getPagePath" width="100%" height="100%" frameborder="0" id="external-frame"></iframe></el-main>
+      <el-main style="background-color:#fff;padding:0px; margin:0px;"><iframe v-bind:src="getPagePath" style="padding:0px; margin:0px;" width="100%" height="100%" frameborder="0" id="external-frame"></iframe></el-main>
 
 
   </el-container>

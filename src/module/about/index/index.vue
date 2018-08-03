@@ -1,6 +1,82 @@
 <template>
-  <div id="app">
-    <div id="searchContent">
+<el-container :style="correctheight">
+  <el-aside width="174px" style="background:linear-gradient(#005dad,#019cdc)">
+<Lmenu isblocks=1>
+  <div slot="h2txt">太保集团</div>
+  <ul class="rootmenu">
+    <li><span class="iconfont icon-more"></span>集团公司
+        <ul>
+          <li><span class="iconfont icon-more"></span>产险总公司</li>
+          <li><span class="iconfont icon-more"></span>产险总公司</li>
+          <li><span class="iconfont icon-more"></span>产险总公司
+            <ul>
+              <li><span class="iconfont icon-more"></span>产险总公司1
+                <ul>
+                  <li><span class="iconfont icon-more"></span>产险总公司1a</li>
+                  <li><span class="iconfont icon-more"></span>产险总公司2a</li>
+                  <li><span class="iconfont icon-more"></span>产险总公司3a</li>
+                </ul>
+              </li>
+              <li><span class="iconfont icon-more"></span>产险总公司2
+                <ul>
+                  <li><span class="iconfont icon-more"></span>产险总公司1b</li>
+                  <li><span class="iconfont icon-more"></span>产险总公司2b</li>
+                  <li><span class="iconfont icon-more"></span>产险总公司3b</li>
+                </ul>
+              </li>
+              <li><span class="iconfont icon-more"></span>产险总公司3</li>
+            </ul>
+          </li>
+
+          <li><span class="iconfont icon-more"></span>产险总公司XX
+            <ul>
+              <li><span class="iconfont icon-more"></span>产险总公司1
+                <ul>
+                  <li><span class="iconfont icon-more"></span>产险总公司1a</li>
+                  <li><span class="iconfont icon-more"></span>产险总公司2a</li>
+                  <li><span class="iconfont icon-more"></span>产险总公司3a</li>
+                </ul>
+              </li>
+              <li><span class="iconfont icon-more"></span>产险总公司2
+                <ul>
+                  <li><span class="iconfont icon-more"></span>产险总公司1b</li>
+                  <li><span class="iconfont icon-more"></span>产险总公司2b</li>
+                  <li><span class="iconfont icon-more"></span>产险总公司3b</li>
+                </ul>
+              </li>
+              <li><span class="iconfont icon-more"></span>产险总公司3</li>
+            </ul>
+          </li>
+
+
+          <li><span class="iconfont icon-more"></span>产险总公司YY
+            <ul>
+              <li><span class="iconfont icon-more"></span>产险总公司1
+                <ul>
+                  <li><span class="iconfont icon-more"></span>产险总公司1a</li>
+                  <li><span class="iconfont icon-more"></span>产险总公司2a</li>
+                  <li><span class="iconfont icon-more"></span>产险总公司3a</li>
+                </ul>
+              </li>
+              <li><span class="iconfont icon-more"></span>产险总公司2
+                <ul>
+                  <li><span class="iconfont icon-more"></span>产险总公司1b</li>
+                  <li><span class="iconfont icon-more"></span>产险总公司2b</li>
+                  <li><span class="iconfont icon-more"></span>产险总公司3b</li>
+                </ul>
+              </li>
+              <li><span class="iconfont icon-more"></span>产险总公司3</li>
+            </ul>
+          </li>
+        </ul>
+    </li>
+    <li><span class="iconfont icon-more"></span>寿险总公司</li>
+    <li><span class="iconfont icon-more"></span>长江养老</li>
+  </ul>
+</Lmenu>
+  </el-aside>
+  <el-main style="padding:0 20px">
+      <div id="searchContent">
       <Search>
         <span slot="fontxt">按机构统计</span>
         <div class="seactent">
@@ -107,20 +183,22 @@ placeholder="选择日期">
  </el-table>
       </TabList>
     </div>
-
-  </div>
+  </el-main>
+</el-container>
 </template>
 
 <script>
   window.$ = window.jQuery = require('materialize-css/node_modules/jquery/dist/jquery.js')
   import Search from "../../../common/vue/search.vue"
+  import Lmenu from "../../../common/vue/leftmenu.vue"
   import TabList from "../../../common/vue/tablelist.vue"
   // require('materialize-css')
 export default {
   name: 'app',
-  components:{Search,TabList}
+  components:{Search,TabList,Lmenu}
   ,data () {
       return {
+        correctheight:{height:document.documentElement.clientHeight+'px'},
         radio: '1',
         value1: '',
         value2: '',
@@ -229,4 +307,29 @@ button.check{background-color:#FFF; color:#005db1}
 .defaultbtn{background-color: #fbfbfb;}
 .el-radio__input.is-checked .el-radio__inner,.el-checkbox__input.is-checked .el-checkbox__inner{border-color:#005bac;background:#005bac;}
   /* .el-table--border td,.el-table td,.el-table th.is-leaf,.el-table th.is-leaf,.el-table--border th{border-right: 1px solid #ff0000;} */
+.el-main{padding:0px; }
+.rootmenu{padding-left: 10px; color: #fff; margin-top:4px; font-size: 14px; }
+.rootmenu>li{margin-bottom:0px; line-height: 100%; cursor: pointer; padding:8px 0}
+.rootmenu>li:last-child{margin-bottom:0px; padding:0px}
+.rootmenu>li ul{margin-left:10px;margin-top:4px}
+.rootmenu>li ul li{padding:8px 0}
+.rootmenu>li ul>li:last-child{margin-bottom:0px; padding-bottom:0px}
+.rootmenu>li ul{padding-bottom:0px}
+/* .rootmenu>li ul li:last-child{margin:0px; padding:0px} */
+.rootmenu .iconfont{font-size: 12px}
+/*滚动条样式*/
+                   .el-aside::-webkit-scrollbar {/*滚动条整体样式*/
+                       width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
+                       height: 4px;
+                   }
+                   .el-aside::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+                       border-radius: 5px;
+                       -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+                       background: rgba(0,0,0,0.2);
+                   }
+                   .el-aside::-webkit-scrollbar-track {/*滚动条里面轨道*/
+                       -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+                       border-radius: 0;
+                       background: rgba(0,0,0,0.1);
+                   }
 </style>
