@@ -80,14 +80,18 @@
       <Search>
         <span slot="fontxt">按机构统计</span>
         <div class="seactent">
-        <el-row><el-col :span="12"  class="padt8"><span>包含下级：</span><el-radio v-model="radio" label="1">备选项</el-radio><el-radio v-model="radio" label="2">备选项</el-radio></el-col><el-col :span="12"><el-col :span="12"><span class="tit">开始日期</span><el-date-picker
+        <el-row><el-col :span="12"  class="padt8"><span>包含下级：</span><el-radio v-model="radio" label="1">备选项</el-radio><el-radio v-model="radio" label="2">备选项</el-radio></el-col><el-col :span="12"><el-col :span="12"><span class="tit">开始日期</span>
+    <el-date-picker
       v-model="value1"
       type="date"
+      size="mini"
       placeholder="选择日期">
-    </el-date-picker></el-col><el-col :span="12"><span class="tit">结束日期</span><el-date-picker
-v-model="value2"
-type="date"
-placeholder="选择日期">
+    </el-date-picker></el-col><el-col :span="12"><span class="tit">结束日期</span>
+    <el-date-picker
+      v-model="value2"
+      type="date"
+      size="mini"
+      placeholder="选择日期">
 </el-date-picker></el-col></el-col></el-row>
         <el-row class="mart12">  <el-col :span="24"  class="padt8"><span>优先级别：</span><el-checkbox v-model="all">全部</el-checkbox><el-checkbox v-model="lt955">95500联通</el-checkbox><el-checkbox v-model="checked">集团MAS</el-checkbox><el-checkbox v-model="checked">产险联通</el-checkbox><el-checkbox v-model="checked">产险移动</el-checkbox><el-checkbox v-model="checked">产险电信</el-checkbox><el-checkbox v-model="checked">srrp移动</el-checkbox><el-checkbox v-model="checked">srrp电信联通</el-checkbox><el-checkbox v-model="checked">备选项</el-checkbox></el-col></el-row>
         </div>
@@ -97,8 +101,6 @@ placeholder="选择日期">
 
     <div id="maintabContent">
       <TabList>
-
-
           <el-row  slot="btnslot">
                    <el-col :span="4">
                      <el-button-group>
@@ -112,7 +114,6 @@ placeholder="选择日期">
                         <el-row justify="end" style="text-align:right"><el-button>导出</el-button></el-row>
                    </el-col>
           </el-row>
-
 <el-table
    :data="tableData4"
    style="width: 100%"
