@@ -85,12 +85,15 @@
       v-model="value1"
       type="date"
       size="mini"
+      class="input-class"
       placeholder="选择日期">
     </el-date-picker></el-col><el-col :span="12"><span class="tit">结束日期</span>
     <el-date-picker
       v-model="value2"
       type="date"
       size="mini"
+      width="50%"
+      class="input-class"
       placeholder="选择日期">
 </el-date-picker></el-col></el-col></el-row>
         <el-row class="mart12">  <el-col :span="24"  class="padt8"><span>优先级别：</span><el-checkbox v-model="all">全部</el-checkbox><el-checkbox v-model="lt955">95500联通</el-checkbox><el-checkbox v-model="checked">集团MAS</el-checkbox><el-checkbox v-model="checked">产险联通</el-checkbox><el-checkbox v-model="checked">产险移动</el-checkbox><el-checkbox v-model="checked">产险电信</el-checkbox><el-checkbox v-model="checked">srrp移动</el-checkbox><el-checkbox v-model="checked">srrp电信联通</el-checkbox><el-checkbox v-model="checked">备选项</el-checkbox></el-col></el-row>
@@ -333,4 +336,5 @@ button.check{background-color:#FFF; color:#005db1}
                        border-radius: 0;
                        background: rgba(0,0,0,0.1);
                    }
+#searchContent .input-class{width:50%}
 </style>
