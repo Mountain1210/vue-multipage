@@ -1,9 +1,10 @@
 <template>
 <el-container :style="correctheight">
-  <el-aside width="174px" style="background:linear-gradient(#005dad,#019cdc)">
+  <el-aside width="174px" :style="correctheightel" style="background:linear-gradient(#005dad,#019cdc); overflow-x:hidden">
 <Lmenu isblocks=1>
   <div slot="h2txt">太保集团</div>
-  <ul class="rootmenu">
+  <ul class="rootmenu" :style="{height: correctheightul-85 + 'px' }">
+    <!-- <ul class="rootmenu" style="width:180px" :style="correctheight"> -->
     <li><span class="iconfont icon-more"></span>集团公司
         <ul>
           <li><span class="iconfont icon-more"></span>产险总公司</li>
@@ -203,6 +204,8 @@ export default {
   ,data () {
       return {
         correctheight:{height:document.documentElement.clientHeight+'px'},
+        correctheightel:{overflow: 'hidden',width:'174px'},
+        correctheightul:document.documentElement.clientHeight,
         radio: '1',
         value1: '',
         value2: '',

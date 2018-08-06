@@ -1,10 +1,10 @@
 <template>
-  <div id="leftmenutxt">
+  <div id="leftmenutxt" style="overflow-y: auto; padding-right:8px; overflow-x:hidden; width:180px">
     <h2><slot name="h2txt"></slot></h2>
     <div class="inputxt" v-if="isblock==1">
       <el-input
         placeholder="搜索"
-        v-model="input23" size="mini">
+        v-model="input23" size="mini" style="width:150px">
         <i slot="prefix" class="el-input__icon el-icon-search" ></i>
       </el-input>
     </div>
