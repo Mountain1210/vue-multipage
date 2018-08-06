@@ -2,11 +2,8 @@
  * 多页面支持
  * @File:
  * @Description: 多页面支持
- * @author qingyi xuelongqy@foxmail.com
- * @date 2017/6/15 10:16
- * @version V1.0
  */
-
+require("babel-polyfill");
 var path = require('path')
 var fs = require("fs")
 var HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -25,7 +22,8 @@ exports.getEntries = function getEntries(){
   //变量模块列表
   moduleList.forEach(function (module) {
     if (module.moduleID != "" && module.moduleJS != ""){
-      entries[module.moduleID] = module.moduleJS
+      console.log()
+      entries[module.moduleID] = ['babel-polyfill',module.moduleJS]
     }
   })
   console.log("*********************************** entries ***********************************")
