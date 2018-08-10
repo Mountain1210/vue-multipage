@@ -20,7 +20,7 @@ const state = {
         return this.page_path
       }
       else {
-        this.page_path = this.page_list['about@index']
+        this.page_path = this.page_list['home@index']
       }
       return this.page_path
     }
@@ -29,9 +29,12 @@ const state = {
 const mutations = {
 
     [ADDHISTORY](state, index) {
+      console.log(1111)
+        console.log(state.historymenu)
         state.historymenu.push(index);
     }
     ,[DELHISTORY](state, index) {
+      console.log(2222)
         if(isNaN(index)||index>state.historymenu.length){return false;}
           state.historymenu.splice(index,1);
     }

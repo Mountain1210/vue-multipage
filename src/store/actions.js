@@ -9,6 +9,7 @@ export default {
             commit,
             state
         },index)=>{
+          console.log(index)
           commit(types.ADDHISTORY,index);
             // if (state.mutations.count % 2 == 0) {
             //     commit(types.INCREMENT);

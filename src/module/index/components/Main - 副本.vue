@@ -18,7 +18,6 @@
       </el-aside>
       <el-main style="background-color:#fff;padding:0px; margin:0px;">
         <iframe v-bind:src="getPagePath" style="padding:0px; margin:0px;" width="100%" height="100%" frameborder="0" id="external-frame" name="myFrameName"></iframe>
-        <!-- <router-view></router-view> -->
       </el-main>
   </el-container>
 
@@ -72,8 +71,6 @@ import {mapGetters,mapActions} from "vuex"
       }
     }
     ,created(){
-      console.log(33333333333333333333)
-    console.log(this.$route.params.page_path)
         var _self=this;
         $.get("./static/url.html").then((datas)=>{
           _self.urlname=[...jQuery.parseJSON(datas)];
@@ -96,7 +93,7 @@ import {mapGetters,mapActions} from "vuex"
       ...mapGetters(['count']),
         //获取页面路径
         getPagePath (){
-          alert(this.$route.params.page_path)
+          // alert(this.$route.params.page_path)
           if (this.page_list[this.$route.params.page_path]) {
             this.page_path = this.page_list[this.$route.params.page_path]
           }

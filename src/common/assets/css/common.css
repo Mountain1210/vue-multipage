@@ -1,0 +1,71 @@
+/*标准色号*/
+/*蓝色*/
+.f-cg-n{color:#005BAC;}
+.b-cg-n{background-color: #005BAC}
+
+.f-cg2-n{color:#009DDC;}
+.b-cg2-n{background-color: #009DDC}
+
+/*红色*/
+.f-cr-n{color:#E83344;}
+.b-cr-n{background-color: #E83344}
+
+/*黄色*/
+.f-cy-n{color:#F5A100;}
+.b-cy-n{background-color: #F5A100}
+
+/*绿色*/
+.f-cb-n{color:#6EB92B;}
+.b-cb-n{background-color: #6EB92B}
+
+/*灰色*/
+.f-cgg-n{color:#E5EEF6;}
+.b-cgg-n{background-color: #E5EEF6}
+
+/*亮度提高20% 色号*/
+/*蓝色*/
+.f-cg-nh{color:#005BAC;}
+.b-cg-nh{background-color: #005BAC}
+
+.f-cg2-nh{color:#32B0E2;}
+.b-cg2-nh{background-color: #32B0E2}
+
+/*红色*/
+.f-cr-nh{color:#EC5B68;}
+.b-cr-nh{background-color: #EC5B68}
+
+/*黄色*/
+.f-cy-nh{color:#F6B332;}
+.b-cy-nh{background-color: #F6B332;}
+
+/*绿色*/
+.f-cb-nh{color:#8AC654;}
+.b-cb-nh{background-color: #8AC654}
+
+/*灰色*/
+.f-cgg-nh{color:#EAF1F7;}
+.b-cgg-nh{background-color: #EAF1F7}
+
+/*亮度降低20% 色号*/
+/*蓝色*/
+.f-cg-nh{color:#00498A;}
+.b-cg-nh{background-color: #00498A}
+
+.f-cg2-nh{color:#007EB0;}
+.b-cg2-nh{background-color: #007EB0}
+
+/*红色*/
+.f-cr-nh{color: #BA2936;}
+.b-cr-nh{background-color:#BA2936}
+
+/*黄色*/
+.f-cy-nh{color: #C48100;}
+.b-cy-nh{background-color:#C48100;}
+
+/*绿色*/
+.f-cb-nh{color:#589422;}
+.b-cb-nh{background-color: #589422}
+
+/*灰色*/
+.f-cgg-nh{color:#B8BFC5;}
+.b-cgg-nh{background-color: #B8BFC5}

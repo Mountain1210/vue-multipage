@@ -197,6 +197,7 @@
   import Search from "../../../common/vue/search.vue"
   import Lmenu from "../../../common/vue/leftmenu.vue"
   import TabList from "../../../common/vue/tablelist.vue"
+  import {mapGetters, mapActions} from "vuex"
   // require('materialize-css')
 export default {
   name: 'app',

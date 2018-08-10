@@ -1,5 +1,5 @@
 <template>
-  <div id="leftmenutxt" style="overflow-y: auto; padding-right:8px; overflow-x:hidden; width:180px">
+  <div id="leftmenutxt" style="overflow-y: auto; overflow-x:hidden; width:188px">
     <h2><slot name="h2txt"></slot></h2>
     <div class="inputxt" v-if="isblock==1">
       <el-input

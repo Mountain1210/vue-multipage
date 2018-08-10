@@ -7,13 +7,7 @@
           太平洋保险<br>CPIC
         </div></el-col>
         <el-col :span="16"><div class="grid-content bg-purple-light"></div><ul class="topmenu">
-        <!-- <li class="check"><span class="iconfont icon-category"></span>系统配置</li>
-        <li><span class="iconfont icon-form"></span>信息统计</li>
-        <li><span class="iconfont icon-text"></span>短信管理</li>
-        <li><span class="iconfont icon-lights"></span>激活管理</li>
-        <li><span class="iconfont icon-rfq"></span>UMP管理</li>
-        <li><span class="iconfont icon-set"></span>系统管理</li> -->
-        <li class="limenu iconfont" :class="item.icon" v-for="item in this.urlname" >
+            <li class="limenu iconfont" :class="item.icon" v-for="item in this.urlname" >
           <!-- <router-link :to="item.subMenuu[0].url" tag="li" active-class="active" class="limenu iconfont" :class="item.icon" v-for="item in this.urlname" > -->
             {{item.name}}
             <p class="topmenuxb iconfont icon-moreunfold"></p>
@@ -42,7 +36,7 @@
 
         <!-- <li>参数配置<span class="iconfont icon-close"></span></li> -->
         <!-- <li  :urlto="item.url" :class="ischeck?'hischeck':'clB'" v-for="item in getMenuArray" > -->
-        <li :urlto="item.url"  v-for="(item,index) in getMenuArray">
+        <li :urlto="item.url" :class="parseInt(getMenuArray.length)==index+1?'hischeck2':'clB'" v-for="(item,index) in getMenuArray">
 
 <!-- {{getMenuArray.length}} -->
             <p :class="parseInt(getMenuArray.length)==index+1?'hischeck':'clB'"><span class="txt"  :title="item.name">{{item.name | capitalize}}</span><span class="iconfont icon-close"></span></p>
@@ -50,7 +44,8 @@
       </ul>
     </div>
     </el-header>
-     <router-view/>
+    <router-view></router-view>
+     <!-- <router-view/> -->
     <!-- <el-container id="mainContent">
         <el-aside>
             <div class="subsmain" @click="clickOdd"> 现在的数字为：{{count}}</div>
@@ -67,19 +62,21 @@
 .topmentu-right li.check{ background-color:#04549d;}
 .topmenu li span,.topmentu-right span{padding:0 4px 0 0}
 .submenu li{display: inline-block;}
-.submenu .hischeck{color:#04549d}
+.submenu .hischeck{color:#04549d; background-color: #fff; }
+.submenu li p{padding:12px 16px; }
+/* .submenu .hischeck2{color:#04549d; background-color: #fff} */
 .el-header, .el-footer {
-   background-color: #B3C0D1;
    color: #333;
    text-align: center;
    /* line-height: 60px; */
  }
  .topmentu-right{float:right}
-.el-header{background-color: #0168b7}
+/* .el-header{background-color: #0168b7} */
+.el-header:nth-child(1){background:linear-gradient(to right,#005dad,#019cdc)}
 .el-header:nth-child(2){background-color: #e4e4e4; text-align: left; padding:0px;line-height: 100%; border-bottom:1px solid #ccc}
-.el-header:nth-child(2) li{padding:12px 16px; border-right:1px solid #ccc; font-size: 14px}
+.el-header:nth-child(2) li{border-right:1px solid #ccc; font-size: 14px}
 .el-header:nth-child(2) li span{cursor: pointer; margin-left:12px; }
-  .el-header:nth-child(2) li .icon-close:before{margin-top:2px}
+.el-header:nth-child(2) li .icon-close:before{margin-top:2px}
  .el-aside {
    background:linear-gradient(#005dad,#019cdc);
    color: #333;
@@ -143,6 +140,8 @@ export default {
   }
   //  页面加载之前
   ,created() {
+    console.log(111111111111111111)
+    console.log(this.$route.params.page_path)
     var _self=this;
     $.get("./static/majorurl.html").then((datas)=>{
       _self.urlname=[...jQuery.parseJSON(datas)];
